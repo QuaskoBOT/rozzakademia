@@ -1,0 +1,287 @@
+/* --- ZMIENNE KOLORÓW I FONTÓW --- */
+:root {
+    --primary-color: #00e676; /* Jasny Neon Zielony */
+    --secondary-color: #00b0ff; /* Jasny Neon Niebieski */
+    --dark-bg: #1a1a2e; /* Ciemny Granat (Główny Kolor Tła) */
+    --light-bg: #272744; /* Nieco jaśniejsze tło sekcji */
+    --text-color: #e0e0e0;
+    --transition-speed: 0.4s;
+    --font-primary: 'Poppins', sans-serif;
+}
+
+/* --- GLOBALNE STYLE I RESET --- */
+* {
+    box-sizing: border-box;
+}
+
+body {
+    font-family: var(--font-primary);
+    background-color: var(--dark-bg);
+    color: var(--text-color);
+    margin: 0;
+    padding: 0;
+    line-height: 1.6;
+    scroll-behavior: smooth;
+}
+
+a {
+    color: var(--primary-color);
+    text-decoration: none;
+    transition: color var(--transition-speed);
+}
+a:hover {
+    color: var(--secondary-color);
+}
+
+.section {
+    padding: 100px 5%;
+    max-width: 1400px;
+    margin: 0 auto;
+}
+
+.section-title {
+    font-size: 3em;
+    text-align: center;
+    margin-bottom: 60px;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    color: var(--primary-color);
+    /* Neonowy cień */
+    text-shadow: 0 0 10px rgba(0, 230, 118, 0.5); 
+}
+
+/* --- NAGŁÓWEK I NAWIGACJA (Header & Nav) --- */
+.header {
+    background: rgba(18, 18, 30, 0.95); /* Półprzezroczysty, dla efektu "pływania" */
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.5);
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+}
+
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px 5%;
+}
+
+.logo {
+    font-size: 2em;
+    font-weight: 700;
+    letter-spacing: 3px;
+    color: var(--primary-color);
+}
+
+.nav-links {
+    list-style: none;
+    display: flex;
+    margin: 0;
+    padding: 0;
+}
+
+.nav-item {
+    margin-left: 30px;
+    position: relative;
+    padding-bottom: 5px;
+}
+.nav-item::after { /* Subtelny, animowany underline */
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 0;
+    height: 2px;
+    background-color: var(--primary-color);
+    transition: width var(--transition-speed) ease-out;
+}
+.nav-item:hover::after {
+    width: 100%;
+}
+
+/* --- SEKCJA HERO (Wprowadzenie) --- */
+.hero-section {
+    height: 90vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    position: relative;
+    /* Gradient tła zamiast prostego koloru */
+    background: linear-gradient(135deg, var(--dark-bg) 0%, #0d0d1a 100%);
+    overflow: hidden;
+}
+
+.background-overlay { /* Wizualny element dla głębi */
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    /* Przykład bardziej skomplikowanego tła siatkowego */
+    background-image: radial-gradient(#3c3c5c 1px, transparent 1px);
+    background-size: 40px 40px;
+    opacity: 0.1;
+    animation: pulse 10s infinite alternate;
+}
+
+@keyframes pulse {
+    from { opacity: 0.05; }
+    to { opacity: 0.15; }
+}
+
+.hero-content {
+    z-index: 10;
+}
+
+.subtitle {
+    font-size: 1.2em;
+    color: #999;
+    margin-bottom: 10px;
+    letter-spacing: 4px;
+    text-transform: uppercase;
+}
+
+.main-title {
+    font-size: 5em;
+    margin: 0;
+    font-weight: 900;
+    line-height: 1.1;
+}
+
+.neon-text {
+    color: var(--secondary-color);
+    /* Mocniejszy neonowy cień */
+    text-shadow: 0 0 10px var(--secondary-color), 0 0 20px var(--secondary-color);
+}
+
+.cta-button {
+    display: inline-block;
+    padding: 15px 40px;
+    margin-top: 40px;
+    border: 2px solid var(--primary-color);
+    background: transparent;
+    color: white;
+    font-weight: bold;
+    text-transform: uppercase;
+    border-radius: 50px;
+    transition: background-color var(--transition-speed), transform var(--transition-speed), box-shadow var(--transition-speed);
+}
+
+.cta-button:hover {
+    background-color: var(--primary-color);
+    color: var(--dark-bg);
+    transform: translateY(-5px) scale(1.05);
+    box-shadow: 0 10px 30px rgba(0, 230, 118, 0.4);
+}
+
+/* --- GRID UMIEJĘTNOŚCI (Skills) --- */
+.skills-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 40px;
+    text-align: center;
+}
+
+.skill-card {
+    background-color: var(--light-bg);
+    padding: 40px;
+    border-radius: 12px;
+    border-top: 5px solid var(--secondary-color);
+    box-shadow: 0 8px 30px rgba(0, 0, 0, 0.5);
+    transition: transform 0.3s ease;
+}
+.skill-card:hover {
+    transform: translateY(-10px);
+    border-top-color: var(--primary-color);
+}
+
+.icon {
+    font-size: 3em;
+    display: block;
+    margin-bottom: 15px;
+}
+
+.skill-card h3 {
+    color: var(--primary-color);
+    font-size: 1.5em;
+    margin-top: 0;
+}
+
+/* --- PORTFOLIO (Gallery Grid) --- */
+.portfolio-container {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+}
+
+.portfolio-item {
+    min-height: 300px;
+    background-color: var(--light-bg);
+    border-radius: 10px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 1.5em;
+    font-weight: bold;
+    color: var(--text-color);
+    text-transform: uppercase;
+    transition: transform 0.3s, opacity 0.3s;
+    overflow: hidden;
+    position: relative;
+}
+
+.portfolio-item::after { /* Efekt przeźroczystej nakładki */
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.4);
+    transition: background 0.3s;
+}
+
+.portfolio-item:hover {
+    transform: scale(1.03);
+}
+
+.portfolio-item:hover::after {
+    background: rgba(0, 230, 118, 0.2); /* Lekki zielony poblask na hover */
+}
+
+/* --- STOPKA (Footer) --- */
+.footer {
+    text-align: center;
+    padding: 30px;
+    background-color: #0d0d1a;
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
+    color: #666;
+    font-size: 0.9em;
+}
+
+/* --- RESPONSYWNOŚĆ --- */
+@media (max-width: 1024px) {
+    .main-title {
+        font-size: 4em;
+    }
+    .portfolio-container {
+        grid-template-columns: 1fr 1fr;
+    }
+}
+
+@media (max-width: 768px) {
+    .navbar {
+        flex-direction: column;
+        padding-bottom: 10px;
+    }
+    .nav-links {
+        margin-top: 10px;
+    }
+    .nav-item {
+        margin: 0 15px;
+    }
+    .main-title {
+        font-size: 3em;
+    }
+    .portfolio-container {
+        grid-template
