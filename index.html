@@ -3,65 +3,85 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Rozz | Cyfrowy Artysta</title>
+    <title>Aufza Bot - Przyszłość Twojego Serwera</title>
     <link rel="stylesheet" href="style.css">
-    </head>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;500;700;900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+</head>
 <body>
-    <header class="header">
-        <nav class="navbar">
-            <a href="#home" class="logo">ROZZ</a>
-            <ul class="nav-links">
-                <li><a href="#about" class="nav-item">O Rozz</a></li>
-                <li><a href="#skills" class="nav-item">Umiejętności</a></li>
-                <li><a href="#portfolio" class="nav-item">Portfolio</a></li>
-                <li><a href="#contact" class="nav-item">Kontakt</a></li>
-            </ul>
+
+    <header class="navbar">
+        <div class="logo">AUFZA</div>
+        <nav class="nav-links">
+            <a href="#features">Funkcje</a>
+            <a href="#commands">Komendy</a>
+            <a href="#community">Wsparcie</a>
         </nav>
+        <a href="#" class="btn btn-primary">DODAJ BOTA</a>
     </header>
 
     <main>
-        <section id="home" class="hero-section">
+        <section id="hero" class="hero-section">
             <div class="hero-content">
-                <p class="subtitle">Kreatywność bez granic</p>
-                <h1 class="main-title">Akademia <span class="neon-text">Rozz</span></h1>
-                <a href="#portfolio" class="cta-button">Odkryj więcej...</a>
+                <p class="tagline">PONAD 100 000 SERWERÓW ZAUFAŁO</p>
+                <h1>Zmień Swój Discord w **Wizję Przyszłości**</h1>
+                <p class="subtitle">Aufza to najbardziej zaawansowany i konfigurowalny bot, zaprojektowany, aby podnieść jakość każdego serwera do profesjonalnego poziomu.</p>
+                <div class="hero-actions">
+                    <a href="#" class="btn btn-hero-invite">
+                        <i class="fab fa-discord"></i> Dodaj **Aufza**
+                    </a>
+                    <a href="#" class="btn btn-secondary">
+                        Panel Użytkownika <i class="fas fa-arrow-right"></i>
+                    </a>
+                </div>
             </div>
-            <div class="background-overlay"></div>
+            <div class="hero-visual"></div> 
         </section>
 
-        <section id="skills" class="section dark-bg">
-            <h2 class="section-title">Czym się zajmuję:</h2>
-            <div class="skills-grid">
-                <div class="skill-card">
-                    <i class="icon">💻</i>
-                    <h3>Development</h3>
-                    <p>Zaawansowany frontend i dbałość o detale w kodzie.</p>
+        <section id="features" class="section feature-grid-container">
+            <h2>Kluczowe **Funkcje**, na które Czekasz</h2>
+            <p class="section-desc">Od zaawansowanej moderacji po immersyjną rozrywkę – Aufza ma wszystko, czego potrzebujesz.</p>
+            
+            <div class="feature-grid">
+                <div class="card feature-card">
+                    <i class="fas fa-shield-alt icon-moderation"></i>
+                    <h3>Inteligentna Moderacja</h3>
+                    <p>Automatyczne blokowanie spamu, filtr linków i logi aktywności w czasie rzeczywistym.</p>
                 </div>
-                <div class="skill-card">
-                    <i class="icon">✨</i>
-                    <h3>Design</h3>
-                    <p>Intuicyjny i estetyczny design interfejsów (UI/UX).</p>
+                <div class="card feature-card">
+                    <i class="fas fa-cogs icon-config"></i>
+                    <h3>Pełna Konfiguracja</h3>
+                    <p>Intuicyjny Dashboard WWW do zarządzania wszystkimi ustawieniami bota bez komend.</p>
                 </div>
-                <div class="skill-card">
-                    <i class="icon">🧠</i>
-                    <h3>Strategia</h3>
-                    <p>Planowanie i optymalizacja cyfrowych rozwiązań.</p>
+                <div class="card feature-card">
+                    <i class="fas fa-music icon-music"></i>
+                    <h3>System Muzyczny HQ</h3>
+                    <p>Krystalicznie czysty dźwięk, obsługa playlist i zaawansowane kontrolki odtwarzania.</p>
+                </div>
+                <div class="card feature-card">
+                    <i class="fas fa-robot icon-ai"></i>
+                    <h3>Funkcje AI</h3>
+                    <p>Integracja z modelami AI do generowania treści, podsumowań i zabawy.</p>
                 </div>
             </div>
         </section>
-        
-        <section id="portfolio" class="section light-bg">
-            <h2 class="section-title">Wybrane Projekty Rozz</h2>
-            <div class="portfolio-container">
-                <a href="#" class="portfolio-item item-1">koks</a>
-                <a href="#" class="portfolio-item item-2">kurwy</a>
-                <a href="#" class="portfolio-item item-3">dziwki</a>
+
+        <section class="section cta-section">
+            <div class="cta-content">
+                <h2>Gotów na **Rewolucję** w Twoim Serwerze?</h2>
+                <a href="#" class="btn btn-primary btn-cta">DOŁĄCZ DO TYSIĘCY SERWERÓW</a>
             </div>
         </section>
     </main>
 
-    <footer class="footer">
-        <p>Strona zbudowana przez Rozz. Wszelkie prawa zastrzeżone.</p>
+    <footer>
+        <p>Aufza Bot &copy; 2025. Wszelkie Prawa Zastrzeżone.</p>
+        <div class="footer-links">
+            <a href="#">Polityka Prywatności</a>
+            <a href="#">Regulamin</a>
+            <a href="#"><i class="fab fa-twitter"></i></a>
+            <a href="#"><i class="fab fa-github"></i></a>
+        </div>
     </footer>
 </body>
 </html>
