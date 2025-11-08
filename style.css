@@ -22,7 +22,7 @@ body {
     color: var(--color-text-main);
     font-family: var(--font-heading);
     line-height: 1.7;
-    overflow-x: hidden; /* Zapobiega poziomemu przewijaniu */
+    overflow-x: hidden;
 }
 
 a {
@@ -42,7 +42,6 @@ h1, h2, h3 {
     justify-content: space-between;
     align-items: center;
     padding: 1rem 5%;
-    /* Półprzezroczysty efekt szkła (blura) - wygląda bardzo premium */
     background-color: rgba(10, 10, 20, 0.9);
     backdrop-filter: blur(8px);
     position: sticky;
@@ -68,7 +67,7 @@ h1, h2, h3 {
     color: var(--color-accent-primary);
 }
 
-/* --- Przyciski (Bardzo ważne dla 'Premium' feelingu) --- */
+/* --- Przyciski --- */
 .btn {
     padding: 0.75rem 1.5rem;
     border-radius: 6px;
@@ -103,7 +102,6 @@ h1, h2, h3 {
 }
 
 .btn-hero-invite {
-    /* Styl przycisku z Hero Section - musi się wyróżniać */
     background: linear-gradient(45deg, var(--color-accent-primary), #7289da);
     color: white;
     padding: 1rem 2.5rem;
@@ -121,7 +119,6 @@ h1, h2, h3 {
     align-items: center;
     text-align: center;
     padding: 8rem 5% 4rem;
-    /* Delikatny gradient dla głębi */
     background: radial-gradient(circle at center top, #181825 0%, var(--color-bg-deep) 70%);
 }
 
@@ -138,7 +135,6 @@ h1, h2, h3 {
     font-size: clamp(2.5rem, 6vw, 4.5rem);
     max-width: 900px;
     margin-bottom: 1.5rem;
-    /* Najważniejszy efekt "za 10000 zł" - neonowy cień */
     text-shadow: 0 0 15px rgba(88, 101, 242, 0.5), 0 0 30px rgba(88, 101, 242, 0.3);
 }
 
@@ -157,8 +153,48 @@ h1, h2, h3 {
     display: flex;
     justify-content: center;
     gap: 1.5rem;
+    margin-bottom: 3rem; /* Odstęp od paska statystyk */
 }
 
+/* --- Pasek Statystyk (Dynamiczny szkielet) --- */
+.stats-bar {
+    display: flex;
+    justify-content: center;
+    gap: 2rem;
+    background-color: var(--color-bg-card);
+    padding: 1.5rem 3rem;
+    border-radius: 12px;
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.3);
+    border: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+.stat-item {
+    text-align: center;
+}
+
+.stat-value {
+    display: block;
+    font-size: 2rem;
+    font-weight: 900;
+    color: var(--color-accent-secondary);
+    /* Neonowy cień na statystykach */
+    text-shadow: 0 0 10px rgba(0, 188, 212, 0.5);
+    min-width: 60px; /* Dla lepszego layoutu przed ładowaniem */
+}
+
+.stat-label {
+    display: block;
+    font-size: 0.9rem;
+    color: var(--color-text-faded);
+    text-transform: uppercase;
+    font-weight: 500;
+}
+
+.stat-separator {
+    width: 1px;
+    background-color: rgba(255, 255, 255, 0.1);
+    margin: 0 1rem;
+}
 
 /* --- Sekcje Główne i Kontenery --- */
 .section {
@@ -192,12 +228,12 @@ h1, h2, h3 {
     border-radius: 12px;
     text-align: left;
     transition: transform 0.3s ease, box-shadow 0.3s ease;
-    border: 1px solid rgba(88, 101, 242, 0.1); /* Delikatna ramka */
+    border: 1px solid rgba(88, 101, 242, 0.1);
 }
 
 .card:hover {
-    transform: translateY(-5px); /* Unoszenie */
-    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.5), 0 0 15px var(--color-accent-secondary); /* Bardziej widoczny cień */
+    transform: translateY(-5px);
+    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.5), 0 0 15px var(--color-accent-secondary);
 }
 
 .feature-card i {
@@ -213,6 +249,80 @@ h1, h2, h3 {
 
 .feature-card p {
     color: var(--color-text-faded);
+}
+
+/* --- Sekcja Komend (Nowoczesny Panel) --- */
+.command-section {
+    background-color: var(--color-bg-deep); /* Czyste tło dla kontrastu */
+}
+
+.command-panel {
+    max-width: 900px;
+    margin: 0 auto;
+    padding: 1.5rem; /* Zmniejszony padding, bo w środku są kontenery */
+    border: 1px solid var(--color-accent-primary); /* Wyraźna ramka premium */
+    box-shadow: 0 0 30px rgba(88, 101, 242, 0.3);
+}
+
+.command-categories {
+    display: flex;
+    justify-content: space-around;
+    margin-bottom: 1.5rem;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+    padding-bottom: 0.5rem;
+}
+
+.tab-btn {
+    background: transparent;
+    border: none;
+    color: var(--color-text-faded);
+    padding: 0.8rem 1.5rem;
+    font-size: 1.1rem;
+    font-weight: 500;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    border-bottom: 3px solid transparent; /* Podkreślenie */
+    opacity: 0.7;
+}
+
+.tab-btn.active {
+    color: var(--color-accent-primary);
+    border-bottom: 3px solid var(--color-accent-primary);
+    opacity: 1;
+    font-weight: 700;
+}
+
+.command-content {
+    min-height: 250px; /* Stała wysokość, aby strona nie skakała */
+    padding: 1rem 0;
+}
+
+.command-list {
+    display: none;
+    text-align: left;
+    animation: fadeIn 0.5s ease-in-out;
+}
+
+.command-list.active-content {
+    display: block;
+}
+
+.command-list h4 {
+    color: var(--color-accent-secondary);
+    font-family: monospace; /* Font code look */
+    font-size: 1.1rem;
+    margin-top: 1.5rem;
+}
+
+.command-list p {
+    margin-bottom: 0.5rem;
+    color: var(--color-text-faded);
+    padding-left: 10px;
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(10px); }
+    to { opacity: 1; transform: translateY(0); }
 }
 
 /* --- Sekcja CTA --- */
@@ -254,40 +364,38 @@ footer {
     color: var(--color-accent-primary);
 }
 
-/* --- Responsywność dla telefonów (Poniżej 768px) --- */
+/* --- Responsywność dla telefonów --- */
 @media (max-width: 768px) {
     .navbar {
-        flex-direction: column;
+        flex-wrap: wrap;
+        padding-bottom: 0.5rem;
     }
 
     .nav-links {
-        margin: 1rem 0;
-        display: none; /* Ukrywamy linki dla czystości na mobile - można dodać przycisk "hamburger" */
+        display: none; /* Ukrywamy linki, pozostawiając przycisk */
     }
 
-    .hero-section {
-        padding-top: 5rem;
+    .stats-bar {
+        padding: 1rem 1.5rem;
+        gap: 1rem;
+        flex-wrap: wrap;
     }
 
-    .hero-section h1 {
-        font-size: 2.8rem;
+    .stat-separator {
+        display: none;
     }
-    
+
     .hero-actions {
         flex-direction: column;
         gap: 1rem;
     }
 
     .btn-hero-invite, .btn-secondary {
-        width: 100%; /* Przyciski na całą szerokość */
+        width: 100%;
         margin: 0;
     }
 
-    .section h2 {
-        font-size: 2rem;
-    }
-
-    .card {
-        padding: 2rem;
+    .command-categories {
+        flex-direction: column;
     }
 }

@@ -26,6 +26,7 @@
                 <p class="tagline">PONAD 100 000 SERWERÓW ZAUFAŁO</p>
                 <h1>Zmień Swój Discord w **Wizję Przyszłości**</h1>
                 <p class="subtitle">Aufza to najbardziej zaawansowany i konfigurowalny bot, zaprojektowany, aby podnieść jakość każdego serwera do profesjonalnego poziomu.</p>
+                
                 <div class="hero-actions">
                     <a href="#" class="btn btn-hero-invite">
                         <i class="fab fa-discord"></i> Dodaj **Aufza**
@@ -34,8 +35,24 @@
                         Panel Użytkownika <i class="fas fa-arrow-right"></i>
                     </a>
                 </div>
+
+                <div class="stats-bar">
+                    <div class="stat-item">
+                        <span id="stat-servers" class="stat-value">...</span>
+                        <span class="stat-label">Serwerów</span>
+                    </div>
+                    <div class="stat-separator"></div>
+                    <div class="stat-item">
+                        <span id="stat-users" class="stat-value">...</span>
+                        <span class="stat-label">Użytkowników</span>
+                    </div>
+                    <div class="stat-separator"></div>
+                    <div class="stat-item">
+                        <span id="stat-uptime" class="stat-value">100%</span>
+                        <span class="stat-label">Uptime</span>
+                    </div>
+                </div>
             </div>
-            <div class="hero-visual"></div> 
         </section>
 
         <section id="features" class="section feature-grid-container">
@@ -66,6 +83,41 @@
             </div>
         </section>
 
+        <section id="commands" class="section command-section">
+            <h2>Przejrzyste **Komendy**</h2>
+            <p class="section-desc">Zobacz najważniejsze komendy w nowoczesnej, interaktywnej formie.</p>
+            
+            <div class="command-panel card">
+                <div class="command-categories">
+                    <button class="tab-btn active" data-category="moderation"><i class="fas fa-gavel"></i> Moderacja</button>
+                    <button class="tab-btn" data-category="utility"><i class="fas fa-tools"></i> Narzędzia</button>
+                    <button class="tab-btn" data-category="fun"><i class="fas fa-dice"></i> Rozrywka</button>
+                </div>
+                <div id="command-content" class="command-content">
+                    <div data-content="moderation" class="command-list active-content">
+                        <h4>/ban [użytkownik] [powód]</h4>
+                        <p>Trwale blokuje użytkownikowi dostęp do serwera.</p>
+                        <h4>/warn [użytkownik] [powód]</h4>
+                        <p>Dodaje ostrzeżenie do profilu użytkownika.</p>
+                        <h4>/mute [użytkownik] [czas]</h4>
+                        <p>Tymczasowo wycisza użytkownika na czacie i głosowo.</p>
+                    </div>
+                    <div data-content="utility" class="command-list">
+                        <h4>/stats</h4>
+                        <p>Wyświetla szczegółowe statystyki serwera i bota.</p>
+                        <h4>/setup [moduł]</h4>
+                        <p>Uruchamia interaktywny kreator konfiguracji modułu.</p>
+                    </div>
+                    <div data-content="fun" class="command-list">
+                        <h4>/dice</h4>
+                        <p>Rzuca kostką (D6) w celu rozrywki.</p>
+                        <h4>/quote</h4>
+                        <p>Generuje losowy cytat motywacyjny.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+        
         <section class="section cta-section">
             <div class="cta-content">
                 <h2>Gotów na **Rewolucję** w Twoim Serwerze?</h2>
@@ -83,5 +135,7 @@
             <a href="#"><i class="fab fa-github"></i></a>
         </div>
     </footer>
+
+    <script src="script.js"></script>
 </body>
 </html>
